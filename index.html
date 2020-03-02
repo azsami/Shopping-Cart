@@ -84,25 +84,27 @@
          phoneMinus.addEventListener("click",function(){
            const PhoneQ = document.getElementsByClassName("phonequantity")[0].value;
            const phoneQ = parseInt(PhoneQ);
+           document.getElementsByClassName("phonequantity")[0].value = phoneQ + (-1);
          //   const phoneQ = phoneQ++;
          //   console.log(phoneQ - 1);
          })
 
          //phone-plus-click
+      
          const phonePlus = document.getElementById("phoneplus");
          phonePlus.addEventListener("click",function(){
             const PhoneQ = document.getElementsByClassName("phonequantity")[0].value;
            const phoneQ = parseInt(PhoneQ);
-           const PA = phoneQ + 1;
-           console.log("PA");
-         })
+           document.getElementsByClassName("phonequantity")[0].value = phoneQ +1;
+         }) 
 
          //case-minus-click
          const caseMinus = document.getElementById("caseminus");
          caseMinus.addEventListener("click",function(){
             const CaseQ = document.getElementsByClassName("casequantity")[0].value;
            const caseQ = parseInt(CaseQ);
-           console.log(caseQ);
+           document.getElementsByClassName("casequantity")[0].value = caseQ + (-1);
+           
          })
 
          //case-plus-click
@@ -110,7 +112,7 @@
          casePlus.addEventListener("click", function(){
             const CaseQ = document.getElementsByClassName("casequantity")[0].value;
            const caseQ = parseInt(CaseQ);
-           console.log(caseQ);
+           document.getElementsByClassName("casequantity")[0].value = caseQ + 1;
          })
 
 
