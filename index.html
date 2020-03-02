@@ -25,9 +25,9 @@
 
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
-                           <button class="btn btn-default"><i class="fas fa-minus"></i></button>
-                           <input type="text" class="form-control text-center" value="1">
-                           <button class="btn btn-default"><i class="fas fa-plus"></i></button>
+                           <button id="phoneminus"class="btn btn-default"><i class="fas fa-minus"></i></button>
+                           <input type="text" class="form-control text-center phonequantity" value= "1">
+                           <button id="phoneplus" class="btn btn-default"><i class="fas fa-plus"></i></button>
                         </div>
                         <h5>$1219</h5>
                         <img src="images/remove.png" alt="" class="remove-item">
@@ -43,9 +43,9 @@
                      </div>
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
-                           <button class="btn btn-default"><i class="fas fa-minus"></i></button>
-                           <input type="text" class="form-control text-center" value="1">
-                           <button class="btn btn-default"><i class="fas fa-plus"></i></button>
+                           <button id="caseminus" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                           <input type="text" class="form-control text-center casequantity" value="1">
+                           <button id="caseplus" class="btn btn-default"><i class="fas fa-plus"></i></button>
 
                         </div>
                         <h5>$59</h5>
@@ -77,6 +77,53 @@
          </div>
       </div>
    </section>
+   <script>
+         //phone-minus-click
+
+         const phoneMinus = document.getElementById("phoneminus");
+         phoneMinus.addEventListener("click",function(){
+           const PhoneQ = document.getElementsByClassName("phonequantity")[0].value;
+           const phoneQ = parseInt(PhoneQ);
+         //   const phoneQ = phoneQ++;
+         //   console.log(phoneQ - 1);
+         })
+
+         //phone-plus-click
+         const phonePlus = document.getElementById("phoneplus");
+         phonePlus.addEventListener("click",function(){
+            const PhoneQ = document.getElementsByClassName("phonequantity")[0].value;
+           const phoneQ = parseInt(PhoneQ);
+           const PA = phoneQ + 1;
+           console.log("PA");
+         })
+
+         //case-minus-click
+         const caseMinus = document.getElementById("caseminus");
+         caseMinus.addEventListener("click",function(){
+            const CaseQ = document.getElementsByClassName("casequantity")[0].value;
+           const caseQ = parseInt(CaseQ);
+           console.log(caseQ);
+         })
+
+         //case-plus-click
+         const casePlus = document.getElementById("caseplus");
+         casePlus.addEventListener("click", function(){
+            const CaseQ = document.getElementsByClassName("casequantity")[0].value;
+           const caseQ = parseInt(CaseQ);
+           console.log(caseQ);
+         })
+
+
+
+
+
+
+
+
+
+
+   </script>
+
 </body>
 
 </html>
