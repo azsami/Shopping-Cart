@@ -29,7 +29,7 @@
                            <input type="text" class="form-control text-center phonequantity" value= "1">
                            <button id="phoneplus" class="btn btn-default"><i class="fas fa-plus"></i></button>
                         </div>
-                        <h5>$1219</h5>
+                        <h5>$<span id="first-input-price">1219</span></h5>
                         <img src="images/remove.png" alt="" class="remove-item">
                      </div>
                   </div>
@@ -48,7 +48,7 @@
                            <button id="caseplus" class="btn btn-default"><i class="fas fa-plus"></i></button>
 
                         </div>
-                        <h5>$59</h5>
+                        <h5>$ <span id="second-input-price">59</span></h5>
                         <img src="images/remove.png" alt="" class="remove-item">
                      </div>
                   </div>
@@ -64,9 +64,10 @@
                      </div>
 
                      <div class="col-md-4 status">
-                        <h5>$1,278</h5>
+                        <!-- <h5 id="Subtotal">$1,278</h5> -->
+                        <h5>$<span id="Subtotal">1278</span></h5>
                         <h5>$0</h5>
-                        <h5>$1,278</h5>
+                        <h5>$<span id="Total">1278</span> </h5>
                      </div>
                   </div>
                </div>
@@ -80,11 +81,28 @@
    <script>
          //phone-minus-click
 
+         
+
          const phoneMinus = document.getElementById("phoneminus");
          phoneMinus.addEventListener("click",function(){
            const PhoneQ = document.getElementsByClassName("phonequantity")[0].value;
            const phoneQ = parseInt(PhoneQ);
            document.getElementsByClassName("phonequantity")[0].value = phoneQ + (-1);
+
+           const pricePerUnit = 1219;
+            const firstInputPriceId = document.getElementById("first-input-price").innerText;
+
+            const priceOfFirstInput = (phoneQ * pricePerUnit) -pricePerUnit;
+
+            document.getElementById("first-input-price").innerText = priceOfFirstInput;
+
+            const subtotal = document.getElementById("Subtotal").innerText;
+         const subtotalNumber = parseFloat(subtotal);
+         const subtotalValue = subtotalNumber - pricePerUnit;         
+         document.getElementById("Subtotal").innerText = subtotalValue;
+         document.getElementById("Total").innerText = subtotalValue;
+            // console.log(subtotalValue);
+           
          //   const phoneQ = phoneQ++;
          //   console.log(phoneQ - 1);
          })
@@ -96,6 +114,21 @@
             const PhoneQ = document.getElementsByClassName("phonequantity")[0].value;
            const phoneQ = parseInt(PhoneQ);
            document.getElementsByClassName("phonequantity")[0].value = phoneQ +1;
+
+           const pricePerUnit = 1219;
+            const firstInputPriceId = document.getElementById("first-input-price").innerText;
+
+            const priceOfFirstInput = pricePerUnit+ phoneQ * pricePerUnit;
+
+            document.getElementById("first-input-price").innerText = priceOfFirstInput;   
+
+            const subtotal = document.getElementById("Subtotal").innerText;
+         const subtotalNumber = parseFloat(subtotal);
+         const subtotalValue = pricePerUnit + subtotalNumber;         
+         document.getElementById("Subtotal").innerText = subtotalValue;
+         document.getElementById("Total").innerText = subtotalValue;
+         // console.log(subtotalValue);
+            
          }) 
 
          //case-minus-click
@@ -104,8 +137,25 @@
             const CaseQ = document.getElementsByClassName("casequantity")[0].value;
            const caseQ = parseInt(CaseQ);
            document.getElementsByClassName("casequantity")[0].value = caseQ + (-1);
+
+           const pricePerUnit2 = 59;
+            const secondInputPriceId = document.getElementById("second-input-price").innerText;
+
+            const priceOfSecondInput = (caseQ * pricePerUnit2) -pricePerUnit2;
+
+            document.getElementById("second-input-price").innerText = priceOfSecondInput;
+
+            const subtotal = document.getElementById("Subtotal").innerText;
+         const subtotalNumber = parseFloat(subtotal);
+         const subtotalValue = subtotalNumber - pricePerUnit2;         
+         document.getElementById("Subtotal").innerText = subtotalValue;
+         document.getElementById("Total").innerText = subtotalValue;
+         // console.log(subtotalValue);
+            
            
          })
+
+
 
          //case-plus-click
          const casePlus = document.getElementById("caseplus");
@@ -113,8 +163,23 @@
             const CaseQ = document.getElementsByClassName("casequantity")[0].value;
            const caseQ = parseInt(CaseQ);
            document.getElementsByClassName("casequantity")[0].value = caseQ + 1;
+
+           const pricePerUnit2 = 59;
+            const secondInputPriceId = document.getElementById("second-input-price").innerText;
+
+            const priceOfSecondInput = (caseQ * pricePerUnit2) +pricePerUnit2;
+
+            document.getElementById("second-input-price").innerText = priceOfSecondInput;
+
+            const subtotal = document.getElementById("Subtotal").innerText;
+         const subtotalNumber = parseFloat(subtotal);
+         const subtotalValue = subtotalNumber + pricePerUnit2;         
+         document.getElementById("Subtotal").innerText = subtotalValue;
+         document.getElementById("Total").innerText = subtotalValue;
+         // console.log(subtotalValue);
          })
 
+         
 
 
 
